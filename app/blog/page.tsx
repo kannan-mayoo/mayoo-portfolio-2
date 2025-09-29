@@ -27,7 +27,8 @@ import { getAllPosts } from "../../lib/mdx"; // relative path from app/blog/page
 //   description: string;
 // };
 
-export default function BlogPage() {
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; 
   const posts = getAllPosts(); // runs server-side
 
   return (
