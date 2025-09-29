@@ -1,6 +1,7 @@
 import Link from "next/link"
 
-export default function About() {
+export default async function About({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; 
     return (
         <div className="justify-center min-h-screen items-start  bg-gray-50 text-center bg-gradient-to-tr from-lime-200 via-green-100 to-cyan-200">
             <div className="max-w-3xl w-full mx-auto text-left py-12 py-20">
